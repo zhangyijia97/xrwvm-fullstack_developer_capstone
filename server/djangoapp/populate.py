@@ -13,12 +13,12 @@ def initiate():
     inst = []
     for data in car_make_data:
         inst.append(
-                CarMake.objects.create(name=data['name'],
-                description=data['description']))
+                    CarMake.objects.create(name=data['name'],
+                    description=data['description']))
 
     # Create CarModel instances with the corresponding CarMake instances
     car_model_data = [
-      {"name": "Pathfinder", "type": "SUV", "year": 2023,"car_make": inst[0]},
+      {"name": "Pathfinder", "type": "SUV", "year": 2023, "car_make": inst[0]},
       {"name": "Qashqai", "type": "SUV", "year": 2023, "car_make": inst[0]},
       {"name": "XTRAIL", "type": "SUV", "year": 2023, "car_make": inst[0]},
       {"name": "A-Class", "type": "SUV", "year": 2023, "car_make": inst[1]},
@@ -33,12 +33,11 @@ def initiate():
       {"name": "Corolla", "type": "Sedan", "year": 2023, "car_make": inst[4]},
       {"name": "Camry", "type": "Sedan", "year": 2023, "car_make": inst[4]},
       {"name": "Kluger", "type": "SUV", "year": 2023, "car_make": inst[4]},
-        # Add more CarModel instances as needed
     ]
 
     for data in car_model_data:
             CarModel.objects.create(
-                    name=data['name'],
-                    car_make=data['car_make'],
-                    type=data['type'],
-                    year=data['year'])
+                name=data['name'],
+                car_make=data['car_make'],
+                type=data['type'],
+                year=data['year'])
